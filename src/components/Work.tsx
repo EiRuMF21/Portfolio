@@ -1,7 +1,6 @@
-import React from "react";
 import Phoenix from "../assets/img/Phoenix.png";
 import iurie from "../assets/img/iurie.png";
-import iurie2 from "../assets/img/Iurie2.png";
+// import iurie2 from "../assets/img/Iurie2.png";
 import Portfolio2 from "../assets/img/Portfolio2_1.png";
 import Portfolio2_2 from "../assets/img/Portofolio2_2.png";
 import Portfolio2_3 from "../assets/img/Portofolio2_3.png";
@@ -26,8 +25,7 @@ const Work = () => {
           <h1 className="text-6xl font-sans">experience</h1>
           <h1 className="text-6xl font-sans ">and</h1>
           <h1 className="text-white/60 font-sans text-6xl">
-            with{" "}
-            <span className=" font-bold text-white">Details</span>
+            with <span className=" font-bold text-white">Details</span>
           </h1>
         </div>
 
