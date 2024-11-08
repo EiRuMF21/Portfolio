@@ -1,5 +1,5 @@
 import Phoenix from "../assets/img/Phoenix.png";
-import iurie from "../assets/img/iurie.png";
+import iurie from "../assets/img/Iurie.png";
 // import iurie2 from "../assets/img/Iurie2.png";
 import Portfolio2 from "../assets/img/Portfolio2_1.png";
 import Portfolio2_2 from "../assets/img/Portofolio2_2.png";
