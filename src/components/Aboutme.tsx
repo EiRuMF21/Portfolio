@@ -41,27 +41,22 @@ const About = () => {
         {/* Left Column: About and Education */}
         <div className="flex flex-col space-y-5">
           {/* About */}
-          <div className="w-[600px] h-[300px] border border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
+          <div className="w-[600px] h-[300px] border-2 border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
             <p className="text-lg leading-relaxed">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it.
+              Hello, nice to meet you all. I'm Iurie Muhamad Farrel, a web
+              developer who is always learning from the experiences I go
+              through. I'm glad to be able to share my journey with all of you.
             </p>
           </div>
 
           {/* Education */}
-          <div className="w-[600px] h-[300px] border border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
+          <div className="w-[600px] h-[300px] border-2 border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
             <h2 className="text-xl font-bold mb-4">Education</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="font-semibold">SMPI Al - Azhar 36</h3>
-                <p className="text-sm">2012-2017</p>
-                <hr className="border-t border-gray-500 mt-2" />
-              </div>
-              <div>
                 <h3 className="font-semibold">SMKN 4 Bandung</h3>
-                <p className="text-sm">2021-2025</p>
+                <p className="text-sm">2022-2025</p>
+                <hr className="border-t border-gray-500 mt-2" />
               </div>
             </div>
           </div>
@@ -81,7 +76,7 @@ const About = () => {
             </div>
 
             {/* Skills */}
-            <div className="w-[500px] h-[400px] border border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
+            <div className="w-[500px] h-[400px] border-2 border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
               <h2 className="text-xl font-bold mb-4">Skills</h2>
               <ul className="space-y-2 text-lg">
                 <li>React Vite</li>
@@ -94,7 +89,7 @@ const About = () => {
           </div>
 
           {/* Tools */}
-          <div className="w-[810px] h-[200px] border border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
+          <div className="w-[810px] h-[200px] border-2 border-gray-500 p-6 rounded-xl bg-black/50 backdrop-blur text-white">
             <h2 className="text-xl font-bold mb-4">Tools</h2>
             <div className="flex space-x-4 mt-2">
               <img

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 interface Repo {
   imageUrl: string;
@@ -11,53 +12,85 @@ interface Repo {
   link: string;
 }
 
-const Portfolio: React.FC = () => {
+const Portfolio = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
 
   useEffect(() => {
-    axios
-      .get("/api/pinned-repos")
-      .then((response) => {
-        setRepos(response.data as Repo[]); // Assert that response.data is an array of Repo
-      })
+    fetch("https://portfolio-be-seven.vercel.app/api/pinned-repos")
+      .then((res) => res.json())
+      .then((data) => setRepos(data))
       .catch((error) => console.error(error));
   }, []);
 
+  const responsive = {
+    0: { items: 1 },
+    768: { items: 2 },
+    1024: { items: 3 },
+  };
+
+  const items = repos.map((repo, index) => (
+    <div className="px-4 w-full" key={index}>
+      <div className="bg-gradient-to-b from-[#D6314F] to-[#701A2A] p-4 rounded-md shadow-md space-y-5">
+        <div className="bg-[#701A2A] p-5 rounded-md">
+          <h3 className="text-white font-sans text-xl font-bold">
+            {repo.name}
+          </h3>
+        </div>
+        <div className="flex flex-col bg-transparent border border-white p-6 rounded-md h-[60vh] justify-center items-start">
+          <img
+            src={repo.imageUrl}
+            alt={repo.name}
+            className="w-full h-40 mb-4 object-cover rounded-md"
+          />
+          <span className="text-yellow-400 text-sm mt-40">⭐ {repo.stars}</span>
+          <a
+            href={repo.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-sm w-full"
+          >
+            <button className="flex flex-row space-x-2 items-center w-full mt-5 h-12 hover:bg-gray-700 rounded-md transition-colors justify-center border border-gray-700">
+              <p className="font-sans">View Project</p>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  ));
+
   return (
     <section
-      className="relative h-screen w-screen overflow-hidden bg-black"
+      className="relative py-20 min-h-screen w-full overflow-hidden bg-black"
       id="Portfolio"
     >
-      <div className="grid grid-cols-3 gap-4 p-4">
-        {repos.map((repo, index) => (
-          <div key={index} className="bg-gray-800 p-4 rounded-md shadow-md">
-            <img
-              src={repo.imageUrl}
-              alt={repo.name}
-              className="w-full h-32 object-cover mb-4 rounded-md"
-            />
-            <h3 className="text-white text-lg font-bold">{repo.name}</h3>
-            <p className="text-gray-400 text-sm">{repo.description}</p>
-            <div className="flex items-center mt-2">
-              <span
-                style={{ backgroundColor: repo.languageColor }}
-                className="w-3 h-3 rounded-full mr-2"
-              ></span>
-              <span className="text-gray-400 text-sm">{repo.language}</span>
-            </div>
-            <div className="flex items-center mt-2">
-              <span className="text-yellow-400 text-sm">⭐ {repo.stars}</span>
-            </div>
-            <a
-              href={repo.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 text-sm mt-2"
-            >
-              View Project
-            </a>
-          </div>
-        ))}
+      <div className="w-[200vh] px-8">
+        <AliceCarousel
+          mouseTracking
+          items={items}
+          responsive={responsive}
+          controlsStrategy="alternate"
+          autoPlay
+          autoPlayInterval={2000}
+          infinite
+          keyboardNavigation
+          renderPrevButton={() => {
+            return (
+              <button className="p-4 absolute left-4 top-1/2 -translate-y-1/2 bg-black border border-gray-700 text-white rounded-full opacity-75 hover:opacity-100 z-10">
+                {"<"}
+              </button>
+            );
+          }}
+          renderNextButton={() => {
+            return (
+              <button className="p-4 absolute right-4 top-1/2 -translate-y-1/2 bg-black border border-gray-700 text-white rounded-full opacity-75 hover:opacity-100 z-10">
+                {">"}
+              </button>
+            );
+          }}
+          disableDotsControls={false}
+          paddingLeft={80}
+          paddingRight={80}
+        />
       </div>
     </section>
   );
