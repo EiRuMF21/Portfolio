@@ -1,5 +1,3 @@
-import Lenis from "@studio-freight/lenis";
-
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
@@ -27,7 +25,7 @@ const Navbar = () => {
             e.preventDefault();
             scrollToSection("work");
           }}
-          className="text-white hover:text-gray-300 transition-colors px-4 py-2 uppercase text-xl font-semibold tracking-wider before:w-0 before:h-[1px] hover:text-white before:bg-white before:transition-all before:duration-300 hover:before:w-full"
+          className="text-white hover:text-gray-300 transition-colors px-4 py-2 uppercase text-xl font-semibold tracking-wider before:w-0 before:h-[1px]  before:bg-white before:transition-all before:duration-300 hover:before:w-full"
         >
           Work
         </a>

@@ -1,4 +1,4 @@
-import React from "react";
+
 import Navbar from "./Navbar";
 import BG1 from "../assets/img/BG1.jpg";
 
