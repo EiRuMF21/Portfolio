@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import PP from "../assets/img/pp.jpg";
+import PP from "../assets/img/PP.jpg";
 
 const About = () => {
   const backgroundTextRef = useRef(null);
