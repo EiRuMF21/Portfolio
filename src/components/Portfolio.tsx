@@ -36,13 +36,13 @@ const Portfolio = () => {
             {repo.name}
           </h3>
         </div>
-        <div className="flex flex-col bg-transparent border border-white p-6 rounded-md h-[60vh] justify-center items-start">
+        <div className="flex flex-col space-y-7 bg-transparent border border-white p-6 rounded-md h-[60vh] justify-center items-start">
           <img
             src={repo.imageUrl}
             alt={repo.name}
-            className="w-full h-40 mb-4 object-cover rounded-md"
+            className="w-full h-40 mb-4 rounded-md mt-16"
           />
-          <span className="text-yellow-400 text-sm mt-40">⭐ {repo.stars}</span>
+          <span className="text-yellow-400 text-sm">⭐ {repo.stars}</span>
           <a
             href={repo.link}
             target="_blank"
